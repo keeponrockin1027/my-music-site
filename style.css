@@ -1,0 +1,275 @@
+:root {
+  --bg-color: #121212; /* Dark vintage background like a black T-shirt */
+  --text-color: #f4f4f0; /* Off-white for a worn text look */
+  --accent-color: #cda434; /* Vintage gold accent */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Special Elite', monospace;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+body {
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.85)), 
+              url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Texture overlay for that "worn t-shirt" feel */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Foreground Content */
+.content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  background: rgba(10, 10, 10, 0.75); /* Darker, slightly more opaque background for readability */
+  padding: 4rem;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+  transition: transform 0.3s ease;
+}
+
+.content:hover {
+  transform: translateY(-5px);
+}
+
+.content h1 {
+  font-size: 3.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-family: 'Rye', serif;
+  color: var(--accent-color);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  letter-spacing: 2px;
+}
+
+.content p {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  color: #ccc;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--accent-color);
+  color: #000;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-family: 'Special Elite', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  background-color: var(--text-color);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4), 0 0 15px rgba(205, 164, 52, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content {
+    padding: 2rem;
+  }
+  .content h1 {
+    font-size: 2.5rem;
+  }
+  .background-text .block {
+    font-size: 20vw;
+  }
+  .background-text .script {
+    font-size: 15vw;
+  }
+}
+
+/* Recommend Section */
+.recommendations {
+  position: relative;
+  z-index: 10;
+  padding: 5rem 2rem;
+  background-color: rgba(18, 18, 18, 0.7);
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.recommendations .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.recommendations h2 {
+  font-family: 'Rye', serif;
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+}
+
+.band-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.band-card {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 2rem;
+  border-left: 4px solid var(--accent-color);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.band-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.band-btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: transparent;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: 'Special Elite', monospace;
+  border: 1px solid var(--text-color);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.band-btn:hover {
+  background-color: var(--accent-color);
+  color: #000;
+  border-color: var(--accent-color);
+}
+
+/* Custom button colors */
+.band-btn.neilyoung-btn { border-color: #e67e22; color: #e67e22; font-size: 1.4rem; padding: 1rem 2.5rem; text-shadow: 0 0 5px rgba(230, 126, 34, 0.5); }
+.band-btn.neilyoung-btn:hover { background-color: #e67e22; color: #fff; box-shadow: 0 0 15px #e67e22; }
+
+.band-btn.alarm-btn { border-color: #e74c3c; color: #e74c3c; }
+.band-btn.alarm-btn:hover { background-color: #e74c3c; color: #fff; }
+
+.band-btn.hooters-btn { border-color: #f39c12; color: #f39c12; }
+.band-btn.hooters-btn:hover { background-color: #f39c12; color: #121212; }
+
+.band-btn.replacements-btn { border-color: #3498db; color: #3498db; }
+.band-btn.replacements-btn:hover { background-color: #3498db; color: #fff; }
+
+.band-btn.jayhawks-btn { border-color: #2ecc71; color: #2ecc71; }
+.band-btn.jayhawks-btn:hover { background-color: #2ecc71; color: #121212; }
+
+.band-btn.favorites-btn { border-color: #9b59b6; color: #9b59b6; }
+.band-btn.favorites-btn:hover { background-color: #9b59b6; color: #fff; }
+
+/* 日本語テキスト用にフォントを調整 */
+.band-card p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #bbb;
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+}
+
+@media (min-width: 768px) {
+  .band-card {
+    padding: 2rem 3rem;
+  }
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+/* Video Embed Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: rgba(8, 8, 8, 0.8);
+  color: #666;
+  font-family: 'Special Elite', monospace;
+  margin-top: auto;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+

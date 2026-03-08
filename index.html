@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep on Rockin' - Free World</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Vintage/Grunge Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Rye&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+<body class="fade-in">
+    <div class="hero-section fade-in">
+        <!-- The actual foreground content of the website -->
+        <div class="content">
+            <h1>Keep on Rockin' in the Free World</h1>
+            <p>Embrace the spirit of rock and roll. Let the music guide you through the noise and find your ultimate freedom.</p>
+            <a href="#recommendations" class="btn">Explore the Music</a>
+        </div>
+    </div>
+
+    <!-- Recommendations Section -->
+    <section id="recommendations" class="recommendations">
+        <div class="container">
+            <h2>Recommended Sounds</h2>
+            
+            <div class="band-grid fade-in delay-1">
+                <!-- Highlighted Feature -->
+                <div class="band-card" style="border-left-color: #e67e22; transform: scale(1.02); background: rgba(230, 126, 34, 0.05); margin-bottom: 20px;">
+                    <a href="neilyoung.html" class="band-btn neilyoung-btn">Keep on rockin’ in the free world by Neil Young</a>
+                    <p style="color: #eee;">このサイトのテーマでもある、時代を超えて響き渡る最高のロック・アンセム。社会への鋭いメッセージと、すべてを吹き飛ばすような爆音のギターサウンドが魂を震わせます。</p>
+                </div>
+
+                <div class="band-card fade-in delay-2">
+                    <a href="alarm.html" class="band-btn alarm-btn">The Alarm</a>
+                    <p>80年代に活躍したウェールズ出身の熱きロックバンド。アコースティックギターをかき鳴らすパンク・スピリットと、力強く情熱的なメッセージ性が魅力です。</p>
+                </div>
+                
+                <div class="band-card">
+                    <a href="hooters.html" class="band-btn hooters-btn">The Hooters</a>
+                    <p>マンドリンやメロディカなどの民族楽器を取り入れた、フィラデルフィア発のロックバンド。キャッチーなメロディの中に、どこか土臭く温かいサウンドが響きます。</p>
+                </div>
+
+                <div class="band-card">
+                    <a href="replacements.html" class="band-btn replacements-btn">The Replacements</a>
+                    <p>オルタナティヴ・ロックの先駆者とも言われる、破天荒で愛すべきバンド。荒々しいパンクの衝動と、胸を締め付けるような切ないメロディのギャップがたまりません。</p>
+                </div>
+
+                <div class="band-card">
+                    <a href="jayhawks.html" class="band-btn jayhawks-btn">The Jayhawks</a>
+                    <p>極上のボーカル・ハーモニーを聴かせるオルタナ・カントリーの至宝。アメリカン・ルーツ・ミュージックの伝統を受け継ぎながら、いつまでも色褪せない名曲の宝庫です。</p>
+                </div>
+
+                <div class="band-card">
+                    <a href="favorites.html" class="band-btn favorites-btn">My favorite songs</a>
+                    <p>「Free World」の精神を体現する、最高にロックなフェイバリット・ソング集。泥臭くて、真っ直ぐで、そして自由な音楽の世界へあなたを誘います。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <div style="margin-bottom: 20px; font-family: 'Special Elite', monospace; color: var(--accent-color); font-size: 1.2rem;">
+            VISITORS: <span id="visitorCount" style="background: rgba(0,0,0,0.5); padding: 5px 15px; border-radius: 5px; border: 1px solid var(--accent-color); font-size: 1.5rem; letter-spacing: 2px;">0000</span>
+        </div>
+        <p>&copy; 2026 Keep on Rockin' in the Free World. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // シンプルなローカルアクセスカウンター（ブラウザのStorageを利用）
+        document.addEventListener('DOMContentLoaded', () => {
+            let count = localStorage.getItem('rockin_visitor_count');
+            if (!count) {
+                count = 1234; // 初期値（少しそれらしく見えるように設定）
+            } else {
+                count = parseInt(count) + 1;
+            }
+            localStorage.setItem('rockin_visitor_count', count);
+            
+            // 4桁のゼロ埋め表示
+            document.getElementById('visitorCount').textContent = count.toString().padStart(4, '0');
+        });
+    </script>
+</body>
+</html>
